@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="shortcut icon" href="assets/image/logo/favicon.png" type="image/x-icon">
+    <title>your business</title> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="select-menu">
+        <div class="select-btn">
+            <span class="sBtn-text">Select your business type</span>
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+
+        <ul class="options">
+            <li class="option">
+                <a class="option-text" href="Clothing.html">Clothing Store</a>
+            </li>
+            <li class="option">
+                <a class="option-text" href="Electronic.html">Electronics Store</a>
+            </li>
+            <li class="option">                
+                <a class="option-text" href="Restaurant.html">Restaurant</a>
+            </li>
+            
+            <li class="option">                
+                <a class="option-text" href="Hardware.html">Hardware</a>
+            </li>
+        </ul>
+    </div>
+
+
+    <script>
+        const optionMenu = document.querySelector(".select-menu"),
+       selectBtn = optionMenu.querySelector(".select-btn"),
+       options = optionMenu.querySelectorAll(".option"),
+       sBtn_text = optionMenu.querySelector(".sBtn-text");
+
+selectBtn.addEventListener("click", () => optionMenu.classList.toggle("active"));       
+
+options.forEach(option =>{
+    option.addEventListener("click", ()=>{
+        let selectedOption = option.querySelector(".option-text").innerText;
+        sBtn_text.innerText = selectedOption;
+
+        optionMenu.classList.remove("active");
+    })
+})
+    </script>
+         
+</body>
+</html>
